@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>Image Server Admin</title>
   <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,700italic,700,500italic,500,400italic,300,300italic' rel='stylesheet' type='text/css'>
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
-  <link href="css/chartist.min.css" type="text/css" rel="stylesheet" media="screen,projection">
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="{{ url_for('admin.static',filename='css/materialize.css') }}"  type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="{{ url_for('admin.static',filename='css/chartist.min.css') }}" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="{{ url_for('admin.static',filename='css/style.css') }}" type="text/css" rel="stylesheet" media="screen,projection">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
@@ -52,7 +52,7 @@
             </a>
           </li>
           <li>
-            <a href="#" class="tooltipped" data-position="left" data-delay="50" data-tooltip="Logout">
+              <a href="{{ url_for('admin.logout') }}" class="tooltipped" data-position="left" data-delay="50" data-tooltip="Logout">
               <i class="material-icons">exit_to_app</i>
             </a>
           </li>
@@ -195,9 +195,9 @@
        <i class="large white-text material-icons">code</i>
      </a>
    </div>
-  <script src="js/jquery.min.js"></script>
-  <script src="js/chartist.min.js"></script>
-  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <script src="{{ url_for('admin.static',filename='js/jquery.min.js') }}"></script>
+  <script src="{{ url_for('admin.static',filename='js/chartist.min.js')  }}"></script>
+    <script type="text/javascript" src="{{ url_for('admin.static',filename='js/materialize.min.js') }}"></script>
   <script type="text/javascript">
   (function () {
     //buttons
@@ -241,6 +241,6 @@
       window.clearTimeout(secondToastTimeout);
     }, 5000);
   })();
-  </script>
+  </script> 
 </body>
 </html>
