@@ -1,0 +1,47 @@
+﻿{% extends "base.html" %}
+{% block content %}
+
+        <div id="page-wrapper">
+            <div id="page-inner">
+
+
+                <div class="row">
+                    <div class="col-md-12">
+						<ol class="breadcrumb">
+                      <li><a href="#">Home</a></li>
+                      <li class="active">Download</li>
+                    </ol>
+                    </div>
+                </div>
+				
+				
+                <!-- /. ROW  -->
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="panel panel-primary">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <form role="form" action="{{ url_for('admin.download') }}" method="post">
+                                            <div class="form-group">
+                                                {{ form.hidden_tag() }}
+                                                {{ form.url(class="form-control" ,placeholder="Enter the URL") }}
+                                            </div>
+                                            <div class="form-group">
+                                                {{ form.dir_path(class="form-control", placeholder="Enter the Dir Path") }}
+                                            </div>
+                                                {{ form.submit(class="btn btn-primary") }}
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <footer><p>Build with  <a href="https://flask.pocoo.org" target="_blank" title="Flask">Flask</a> | <a href="https://demo.cssmoban.com/cssthemes4/cpts_946_ccv/index.html"  target="_blank">HYBRID Template</a> | and some love <i class="fas fa-heart"></i></p>
+				</footer>
+            </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+ {% endblock %}
